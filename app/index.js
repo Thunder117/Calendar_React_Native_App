@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
-import { Calendar, ActivityCard } from '../components';
+import { Calendar, ActivityCard, Day } from '../components';
 import { COLORS } from '../constants';
 import styles from './styles';
 
@@ -20,9 +20,14 @@ const Home = () => {
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View>
                     
+                    <Day/>
                     <ActivityCard/>
                     <ActivityCard/>
                     <ActivityCard/>
+                    <Day/>
+                    <ActivityCard/>
+                    <ActivityCard/>
+                    <Day/>
                     <Calendar/>
                     
                 </View>

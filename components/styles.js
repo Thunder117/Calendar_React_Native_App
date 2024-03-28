@@ -1,17 +1,20 @@
 import { StyleSheet } from "react-native";
 
-import { COLORS, SIZES, FONT_WEIGHTS } from "../constants";
+import { COLORS, SIZES, FONT_WEIGHTS, SHADOWS } from "../constants";
 
 const styles = StyleSheet.create({
     cardContainer: {
         width: 340,
-        height: 100,
+        height: 120,
         padding: SIZES.medium,
         margin: 4,
         backgroundColor: COLORS.lightWhite,
         borderRadius: SIZES.small,
-        justifyContent: 'space-between',
-        shadowColor: 'black'
+        ...SHADOWS.small
+    },
+    cardSubContainer: {
+	    flexDirection: 'row',
+        justifyContent: 'space-between'
     },
     cardTime: {
         fontSize:SIZES.xLarge,
@@ -19,6 +22,16 @@ const styles = StyleSheet.create({
     },
     cardDescription: {
         fontSize:SIZES.large
+    },
+    dayContainer: {
+        padding: SIZES.small,
+    },
+    dayText: {
+        fontSize:SIZES.large,
+        fontWeight: FONT_WEIGHTS.regular
+    },
+    dayHighlight: {
+        fontWeight: FONT_WEIGHTS.medium
     }
 });
 
