@@ -1,7 +1,7 @@
-import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 
-import { Calendar } from '../components/index';
+import { Calendar, ActivityCard } from '../components';
 
 const Home = () => {
     const router = useRouter(); 
@@ -16,8 +16,16 @@ const Home = () => {
                     headerTitle: "Good Morning, Chris"
                 }}
             />
-            <Text>Home</Text>
-            <Calendar/>
+
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <View>
+
+                    <Text>Home</Text>
+                    <ActivityCard/>
+                    <Calendar/>
+                    
+                </View>
+            </ScrollView>
             
         </SafeAreaView>
     )
