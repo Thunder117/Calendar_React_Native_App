@@ -1,17 +1,24 @@
 import { StyleSheet } from "react-native";
 
-import { COLORS, SIZES } from "../constants";
+import { COLORS, SIZES, FONT_WEIGHTS } from "../constants";
 
 const styles = StyleSheet.create({
-    container: {
+    cardContainer: {
         width: 340,
         height: 100,
         padding: SIZES.medium,
         margin: 4,
         backgroundColor: COLORS.lightWhite,
         borderRadius: SIZES.small,
-        justifyContent: "space-between",
+        justifyContent: 'space-between',
         shadowColor: 'black'
+    },
+    cardTime: {
+        fontSize:SIZES.xLarge,
+        fontWeight: FONT_WEIGHTS.regular
+    },
+    cardDescription: {
+        fontSize:SIZES.large
     }
 });
 

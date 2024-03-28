@@ -1,9 +1,8 @@
 import { View, Text, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
-
 import { Calendar, ActivityCard } from '../components';
 import { COLORS } from '../constants';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import styles from './styles';
 
 const Home = () => {
     const router = useRouter(); 
@@ -20,7 +19,7 @@ const Home = () => {
 
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View>
-
+                    
                     <ActivityCard/>
                     <ActivityCard/>
                     <ActivityCard/>
@@ -32,14 +31,5 @@ const Home = () => {
         </SafeAreaView>
     )
 }
-
-const styles = StyleSheet.create({
-	container: {
-	flex: 1,
-	backgroundColor: COLORS.white,
-	alignItems: 'center',
-	justifyContent: 'center'
-	}
-});
 
 export default Home;

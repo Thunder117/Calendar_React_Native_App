@@ -1,13 +1,14 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
-import { SIZES, COLORS } from "../constants";
+import { View, Text, TouchableOpacity } from 'react-native'
 import styles from './styles';
 
 const ActivityCard = () => {
 
     return(
-        <TouchableOpacity style={styles.container}>
-            <Text>2pm - 4pm</Text>
-            <Text>Chris</Text>
+        <TouchableOpacity style={styles.cardContainer}>
+            <View>
+                <Text style={styles.cardTime}>2:00pm to 4:00pm</Text>
+                <Text style={styles.cardDescription}>Work in the project</Text>
+            </View>
         </TouchableOpacity>
     );
 }
