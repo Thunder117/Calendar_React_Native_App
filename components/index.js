@@ -3,5 +3,5 @@ import ActivityCard from './ActivityCard';
 
 export {
   Calendar,
-  ActivityCard
+  ActivityCard,
 };

@@ -1,27 +1,16 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import { SIZES, COLORS } from "../constants";
+import styles from './styles';
 
 const ActivityCard = () => {
 
     return(
         <TouchableOpacity style={styles.container}>
-            <Text>An event</Text>
+            <Text>2pm - 4pm</Text>
+            <Text>Chris</Text>
         </TouchableOpacity>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        width: 340,
-        height: 100,
-        padding: SIZES.medium,
-        margin: 4,
-        backgroundColor: COLORS.lightWhite,
-        borderRadius: SIZES.small,
-        justifyContent: "space-between",
-        shadowColor: 'black'
-    }
-});
 
 export default ActivityCard
     
