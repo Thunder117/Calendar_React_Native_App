@@ -5,17 +5,19 @@ const ActivityCard = () => {
 
     return(
         <TouchableOpacity style={styles.container}>
-            
+            <Text>An event</Text>
         </TouchableOpacity>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        width: 250,
-        padding: SIZES.xLarge,
+        width: 340,
+        height: 100,
+        padding: SIZES.medium,
+        margin: 4,
         backgroundColor: COLORS.lightWhite,
-        borderRadius: SIZES.medium,
+        borderRadius: SIZES.small,
         justifyContent: "space-between",
         shadowColor: 'black'
     }

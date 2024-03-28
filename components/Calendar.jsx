@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native'
 import DatePicker from 'react-native-modern-datepicker';
 import { getToday, getFormatedDate } from 'react-native-modern-datepicker';
+import { COLORS } from "../constants";
 
 const Calendar = () => {
 	// Constants
@@ -35,6 +36,7 @@ const Calendar = () => {
 
 						<DatePicker 
 						mode='calendar'
+						buttonColor={COLORS.primary}
 						minimumDate={startDate}
 						selected={date}
 						onDateChange={handleChange}
@@ -59,7 +61,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 22,
         },
-        modalView: {
+	modalView: {
         margin: 20,
         backgroundColor: 'white',
         borderRadius: 20,
@@ -68,8 +70,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         shadowColor: 'black',
         shadowOffset: {
-        width: 0,
-        height: 2,
+			width: 0,
+			height: 2,
         },
         shadowOpacity: 0.25,
         shadowRadius: 4,
