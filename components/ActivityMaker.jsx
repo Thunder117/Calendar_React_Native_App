@@ -4,6 +4,7 @@ import { getToday, getFormatedDate } from 'react-native-modern-datepicker';
 import { AntDesign } from '@expo/vector-icons';
 import styles from './styles';
 import Calendar from './Calendar';
+import ActivityMakerCard from './ActivityMakerCard';
 
 const ActivityMaker = () => {
 
@@ -12,16 +13,13 @@ const ActivityMaker = () => {
 	const startDate = getFormatedDate(today.setDate(today.getDate()), 'YYYY/MM/DD');
 
     // States
-	const [visibleCalendar, setVisibleCalendar] = useState(false); // Open and close state of the calendar modal
+	const [calendar, setCalendar] = useState(false); // True and False state of the calendar modal
 	const [date, setDate] = useState(startDate); // Date variable
-
-    const createActivity = () => {
-        console.log("creating activity");
-    }
+    const [activityMakerCard, setActivityMakerCard] = useState(false); // True and False state of the ActivityMakerCard modal
 
     // Opens and closes the calendar modal
     const handleOnPressPlus = () => {
-		setVisibleCalendar(!visibleCalendar);
+		setCalendar(!calendar);
     }
 
     // Sets the date to the chosen date
@@ -29,10 +27,24 @@ const ActivityMaker = () => {
 		setDate(date)
 	}
 
-    const handleConfirm = () => {
+    const handleConfirmDate = () => {
 		handleOnPressPlus();
 		createActivity();
 	}
+
+    const openActivityMakerCard = () => {
+        setActivityMakerCard(!activityMakerCard);
+    }
+
+    const handleConfirmActivity = () => {
+        console.log("activity created!");
+        openActivityMakerCard();
+    }
+
+    const createActivity = () => {
+        console.log("creating activity");
+        openActivityMakerCard();
+    }
 
     return (
         <View>
@@ -41,11 +53,16 @@ const ActivityMaker = () => {
             </TouchableOpacity>
 
             <Calendar
-            visibleCalendar={visibleCalendar}
+            calendar={calendar}
             date={date}
             startDate={startDate}
             handleChange={handleChange}
-            handleConfirm={handleConfirm}
+            handleConfirmDate={handleConfirmDate}
+            />
+
+            <ActivityMakerCard 
+            activityMakerCard={activityMakerCard}
+            handleConfirmActivity={handleConfirmActivity}
             />
         </View>
     );

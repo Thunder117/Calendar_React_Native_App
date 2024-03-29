@@ -4,11 +4,15 @@ import styles from './styles';
 const Calendar = (props) => {
 	
 	return (
-		<Modal animationType='slide' transparent={true} visible={props.visibleCalendar}>
+		<Modal animationType='slide' transparent={true} visible={props.activityMakerCard}>
 			<View style={styles.centeredView}>
 				<View style={styles.modalView}>
 
-					<Text> Aqui toi</Text>
+					<Text> ActivityMakerCard</Text>
+
+                    <TouchableOpacity onPress={props.handleConfirmActivity}>
+						<Text>Confirm</Text>
+					</TouchableOpacity>
 
 				</View>
 			</View>

@@ -6,7 +6,7 @@ import styles from './styles';
 const Calendar = (props) => {
 	
 	return (
-		<Modal animationType='slide' transparent={true} visible={props.visibleCalendar}>
+		<Modal animationType='slide' transparent={true} visible={props.calendar}>
 			<View style={styles.centeredView}>
 				<View style={styles.modalView}>
 
@@ -18,7 +18,7 @@ const Calendar = (props) => {
 					onDateChange={props.handleChange}
 					/>
 
-					<TouchableOpacity onPress={props.handleConfirm}>
+					<TouchableOpacity onPress={props.handleConfirmDate}>
 						<Text>Confirm</Text>
 					</TouchableOpacity>
 
