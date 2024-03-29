@@ -13,10 +13,13 @@ const Home = () => {
                 options={{
                     headerStyle: { backgroundColor: COLORS.white },
                     headerShadowVisible: false,
-                    headerTitle: "Good Morning, Chris"
+                    headerTitle: "Good Morning, Chris",
+                    headerRight: () => (
+                        <Calendar/>
+                    ),
                 }}
+                
             />
-
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View>
                     
@@ -28,7 +31,9 @@ const Home = () => {
                     <ActivityCard/>
                     <ActivityCard/>
                     <Day/>
-                    <Calendar/>
+                    <ActivityCard/>
+                    <ActivityCard/>
+                    
                     
                 </View>
             </ScrollView>

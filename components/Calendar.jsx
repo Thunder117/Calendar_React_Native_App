@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native'
 import DatePicker from 'react-native-modern-datepicker';
 import { getToday, getFormatedDate } from 'react-native-modern-datepicker';
+import { AntDesign } from '@expo/vector-icons';
 import { COLORS } from "../constants";
+import styles from './styles';
 
 const Calendar = () => {
 	// Constants
@@ -24,10 +26,8 @@ const Calendar = () => {
 
 	return (
 		<View>
-			<Text>Calendar</Text>
-
-			<TouchableOpacity onPress={handleOnPress}>
-				<Text>Open</Text>
+			<TouchableOpacity style={styles.calendarButton} onPress={handleOnPress}>
+				<AntDesign name="plus" size={24} color="black" />
 			</TouchableOpacity>
 			
 			<Modal animationType='slide' transparent={true} visible={open}>
@@ -49,35 +49,8 @@ const Calendar = () => {
 					</View>
 				</View>
 			</Modal>
-
 		</View>
   	);
 }
-
-const styles = StyleSheet.create({
-    centeredView: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 22,
-        },
-	modalView: {
-        margin: 20,
-        backgroundColor: 'white',
-        borderRadius: 20,
-        width: '90%',
-        padding: 35,
-        alignItems: 'center',
-        shadowColor: 'black',
-        shadowOffset: {
-			width: 0,
-			height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
-        elevation: 5
-	}
-});
-
 
 export default Calendar;

@@ -7,7 +7,8 @@ const ActivityCard = () => {
         <TouchableOpacity style={styles.cardContainer}>
             <View style={styles.cardSubContainer}>
                 <View>
-                    <Text style={styles.cardDescription}>Work in the project</Text>
+                    <Text style={styles.cardDescription}>Work in the project
+                    </Text>
                 </View>
                 <View>
                     <Text style={styles.cardTime}>2:00pm</Text>

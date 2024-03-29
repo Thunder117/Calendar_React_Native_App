@@ -3,6 +3,28 @@ import { StyleSheet } from "react-native";
 import { COLORS, SIZES, FONT_WEIGHTS, SHADOWS } from "../constants";
 
 const styles = StyleSheet.create({
+    centeredView: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 22,
+        },
+	modalView: {
+        margin: 20,
+        backgroundColor: 'white',
+        borderRadius: 20,
+        width: '90%',
+        padding: 35,
+        alignItems: 'center',
+        shadowColor: 'black',
+        shadowOffset: {
+			width: 0,
+			height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5
+	},
     cardContainer: {
         width: 340,
         height: 120,
@@ -32,6 +54,13 @@ const styles = StyleSheet.create({
     },
     dayHighlight: {
         fontWeight: FONT_WEIGHTS.medium
+    },
+    calendarButton: {
+        width: 40,
+        height: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontWeight: FONT_WEIGHTS.xLarge
     }
 });
 
