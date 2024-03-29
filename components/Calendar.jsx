@@ -27,7 +27,7 @@ const Calendar = () => {
 	return (
 		<View>
 			<TouchableOpacity style={styles.calendarButton} onPress={handleOnPress}>
-				<AntDesign name="plus" size={24} color="black" />
+				<AntDesign name="plus" size={28} color="black" />
 			</TouchableOpacity>
 			
 			<Modal animationType='slide' transparent={true} visible={open}>

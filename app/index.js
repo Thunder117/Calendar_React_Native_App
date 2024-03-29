@@ -24,16 +24,15 @@ const Home = () => {
                 <View>
                     
                     <Day/>
-                    <ActivityCard/>
-                    <ActivityCard/>
-                    <ActivityCard/>
+                    <ActivityCard start="2" end="4" title="Work in the project" description="Indeed, i do need to work on it"/>
+                    <ActivityCard start="2" end="4" title="Work in the project" description="Indeed, i do need to work on it"/>
                     <Day/>
-                    <ActivityCard/>
-                    <ActivityCard/>
+                    <ActivityCard start="2" end="4" title="Work in the project" description="Indeed, i do need to work on it"/>
+                    <ActivityCard start="2" end="4" title="Work in the project" description="Indeed, i do need to work on it"/>
+                    <ActivityCard start="2" end="4" title="Work in the project" description="Indeed, i do need to work on it"/>
                     <Day/>
-                    <ActivityCard/>
-                    <ActivityCard/>
-                    
+                    <ActivityCard start="2" end="4" title="Work in the project" description="Indeed, i do need to work on it"/>
+                    <ActivityCard start="2" end="4" title="Work in the project" description="Indeed, i do need to work on it"/>
                     
                 </View>
             </ScrollView>
