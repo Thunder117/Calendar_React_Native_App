@@ -1,6 +1,6 @@
 import { View, ScrollView, SafeAreaView } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
-import { Calendar, ActivityCard, Day, Activities } from '../components';
+import { Activities, ActivityMaker } from '../components';
 import { COLORS } from '../constants';
 import styles from './styles';
 
@@ -15,14 +15,14 @@ const Home = () => {
                     headerShadowVisible: false,
                     headerTitle: "Good Morning, Chris",
                     headerRight: () => (
-                        <Calendar/>
+                        <ActivityMaker />
                     ),
                 }}
                 
             />
             <ScrollView showsVerticalScrollIndicator={false}>
-            
-                <Activities/>
+                
+                <Activities />
                
             </ScrollView>
             
