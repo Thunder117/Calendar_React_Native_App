@@ -13,42 +13,41 @@ const ActivityMaker = () => {
 	const startDate = getFormatedDate(today.setDate(today.getDate()), 'YYYY/MM/DD');
 
     // States
-	const [calendar, setCalendar] = useState(false); // True and False state of the calendar modal
+	const [calendar, setCalendar] = useState(false); // True and False state of the Calendar modal
 	const [date, setDate] = useState(startDate); // Date variable
     const [activityMakerCard, setActivityMakerCard] = useState(false); // True and False state of the ActivityMakerCard modal
 
-    // Opens and closes the calendar modal
-    const handleOnPressPlus = () => {
+    // Opens and closes the Calendar modal
+    const toggleCalendar = () => {
 		setCalendar(!calendar);
     }
 
-    // Sets the date to the chosen date
+    // Sets the date variable to the chosen date when the user changes the date in the calendar
 	const handleChange = (date) => {
 		setDate(date)
 	}
 
+    // Calls toggleCalendar and toggleActivityMakerCard
     const handleConfirmDate = () => {
-		handleOnPressPlus();
-		createActivity();
+		toggleCalendar();
+		toggleActivityMakerCard();
 	}
 
-    const openActivityMakerCard = () => {
+    // Opens and closes the ActivityMakerCard modal
+    const toggleActivityMakerCard = () => { // change name
         setActivityMakerCard(!activityMakerCard);
     }
 
+    ///////////////////////////////////////
     const handleConfirmActivity = () => {
         console.log("activity created!");
-        openActivityMakerCard();
+        toggleActivityMakerCard();
     }
 
-    const createActivity = () => {
-        console.log("creating activity");
-        openActivityMakerCard();
-    }
 
     return (
         <View>
-            <TouchableOpacity style={styles.calendarButton} onPress={handleOnPressPlus}>
+            <TouchableOpacity style={styles.calendarButton} onPress={toggleCalendar}>
                 <AntDesign name="plus" size={28} color="black" />
             </TouchableOpacity>
 
