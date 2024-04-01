@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, TouchableOpacity, Modal } from 'react-native'
+import { View, TouchableOpacity } from 'react-native'
 import { getToday, getFormatedDate } from 'react-native-modern-datepicker';
 import { AntDesign } from '@expo/vector-icons';
 import styles from './styles';
@@ -16,6 +16,8 @@ const ActivityMaker = () => {
 	const [calendar, setCalendar] = useState(false); // True and False state of the Calendar modal
 	const [date, setDate] = useState(startDate); // Date variable
     const [activityMakerCard, setActivityMakerCard] = useState(false); // True and False state of the ActivityMakerCard modal
+    const [activityTitle, setActivityTitle] = useState(''); //
+	const [activityDescription, setActivityDescription] = useState(''); //
 
     // Opens and closes the Calendar modal
     const toggleCalendar = () => {
@@ -40,7 +42,7 @@ const ActivityMaker = () => {
 
     ///////////////////////////////////////
     const handleConfirmActivity = () => {
-        console.log("activity created!");
+        console.log("activity created! " + activityTitle + " " + activityDescription);
         toggleActivityMakerCard();
     }
 
@@ -52,16 +54,20 @@ const ActivityMaker = () => {
             </TouchableOpacity>
 
             <Calendar
-            calendar={calendar}
-            date={date}
-            startDate={startDate}
-            handleChange={handleChange}
-            handleConfirmDate={handleConfirmDate}
+                calendar={calendar}
+                date={date}
+                startDate={startDate}
+                handleChange={handleChange}
+                handleConfirmDate={handleConfirmDate}
             />
 
             <ActivityMakerCard 
-            activityMakerCard={activityMakerCard}
-            handleConfirmActivity={handleConfirmActivity}
+                activityMakerCard={activityMakerCard}
+                handleConfirmActivity={handleConfirmActivity}
+                activityTitle={activityTitle}
+                setActivityTitle={setActivityTitle}
+                activityDescription={activityDescription}
+                setActivityDescription={setActivityDescription}
             />
         </View>
     );
