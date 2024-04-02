@@ -9,7 +9,7 @@ import ActivityMakerCard from './ActivityMakerCard';
 const ActivityMaker = () => {
 
     // Constants
-	const today = new Date();
+	const today = new Date(); // Current date
 	const startDate = getFormatedDate(today.setDate(today.getDate()), 'YYYY/MM/DD');
 
     // States
@@ -42,7 +42,7 @@ const ActivityMaker = () => {
 
     ///////////////////////////////////////
     const handleConfirmActivity = () => {
-        console.log("activity created! " + activityTitle + " " + activityDescription);
+        //console.log(date)
         toggleActivityMakerCard();
     }
 

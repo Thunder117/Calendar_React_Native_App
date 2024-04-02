@@ -4,11 +4,14 @@ import Day from './Day';
 
 const Activities = () => {
 
+    
+
     const activities = [
         {
             id: "1",
             start: "2",
             end: "3",
+            date: "2024/04/01",
             title: "Work in the project", 
             description: "Indeed, i do need to work on it"
         },
@@ -16,6 +19,7 @@ const Activities = () => {
             id: "2",
             start: "2",
             end: "3",
+            date: "2024/04/02",
             title: "Work in the project", 
             description: "Indeed, i do need to work on it"
         },
@@ -23,22 +27,12 @@ const Activities = () => {
             id: "3",
             start: "2",
             end: "3",
+            date: "2024/04/03",
             title: "Work in the project", 
             description: "Indeed, i do need to work on it"
         }
     ]
-    /*
-    <Day/>
-    <ActivityCard start="2" end="4" title="Work in the project" description="Indeed, i do need to work on it"/>
-    <ActivityCard start="2" end="4" title="Work in the project" description="Indeed, i do need to work on it"/>
-    <Day/>
-    <ActivityCard start="2" end="4" title="Work in the project" description="Indeed, i do need to work on it"/>
-    <ActivityCard start="2" end="4" title="Work in the project" description="Indeed, i do need to work on it"/>
-    <ActivityCard start="2" end="4" title="Work in the project" description="Indeed, i do need to work on it"/>
-    <Day/>
-    <ActivityCard start="2" end="4" title="Work in the project" description="Indeed, i do need to work on it"/>
-    <ActivityCard start="2" end="4" title="Work in the project" description="Indeed, i do need to work on it"/>
-    */
+
     return(
         <View>
 
