@@ -6,7 +6,7 @@ import styles from './styles';
 import Calendar from './Calendar';
 import ActivityMakerCard from './ActivityMakerCard';
 
-const ActivityMaker = () => {
+const ActivityMaker = (props) => {
 
     // Constants
 	const today = new Date(); // Current date
@@ -28,22 +28,36 @@ const ActivityMaker = () => {
 	const handleChange = (date) => {
 		setDate(date)
 	}
-
-    // Calls toggleCalendar and toggleActivityMakerCard
-    const handleConfirmDate = () => {
-		toggleCalendar();
-		toggleActivityMakerCard();
-	}
-
+    
     // Opens and closes the ActivityMakerCard modal
     const toggleActivityMakerCard = () => { // change name
         setActivityMakerCard(!activityMakerCard);
     }
 
+    // Calls toggleCalendar and toggleActivityMakerCard
+    const handleConfirmDate = () => {
+        toggleCalendar();
+        toggleActivityMakerCard();
+    }
+    
+    const createActivity = () => {
+        props.activities.push(
+            {
+                id: Number(props.activities[props.activities.length - 1].id) + 1,
+                start: "2",
+                end: "3",
+                date: date,
+                title: activityTitle, 
+                description: activityDescription
+            }
+        );
+    }
+
     ///////////////////////////////////////
     const handleConfirmActivity = () => {
-        //console.log(date)
         toggleActivityMakerCard();
+        createActivity();
+        console.log(props.activities);
     }
 
 
