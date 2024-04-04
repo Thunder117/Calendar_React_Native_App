@@ -3,9 +3,9 @@ import ActivityCard from './ActivityCard';
 import Day from './Day';
 
 const Activities = (props) => {
-    const activitiesInOrder = [];
 
     const sortDays = () => {
+        const activitiesInOrder = [];
         for (let date = 1; date < 32; date++) {
             for (let x in props.activities) {
                 if (date == props.activities[x].date.slice(-2)) {
@@ -13,11 +13,11 @@ const Activities = (props) => {
                 }
             }
         } 
+        props.setActivities(activitiesInOrder);
     }
     
     const sortActivityDates = () => {
         sortDays();
-        //console.log(activitiesInOrder)
     }
 
     sortActivityDates();
@@ -26,7 +26,7 @@ const Activities = (props) => {
         <View>
 
             <Day/>
-            {activitiesInOrder.map((activity) => {
+            {props.activities.map((activity) => {
                 return (
                     <ActivityCard
                         start={activity.start} 

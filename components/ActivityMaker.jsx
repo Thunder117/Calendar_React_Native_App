@@ -26,7 +26,7 @@ const ActivityMaker = (props) => {
 
     // Sets the date variable to the chosen date when the user changes the date in the calendar
 	const handleChange = (date) => {
-		setDate(date)
+		setDate(date);
 	}
     
     // Opens and closes the ActivityMakerCard modal
@@ -39,11 +39,16 @@ const ActivityMaker = (props) => {
         toggleCalendar();
         toggleActivityMakerCard();
     }
+
+    const findHighestId = () => {
+        return Math.max(...props.activities.map(o => o.id));
+    }
     
     const createActivity = () => {
+        highestId = findHighestId();
         props.activities.push(
             {
-                id: Number(props.activities[props.activities.length - 1].id) + 1,
+                id: highestId + 1,
                 start: "2",
                 end: "3",
                 date: date,

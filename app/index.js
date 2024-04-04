@@ -6,7 +6,7 @@ import styles from './styles';
 
 const Home = () => {
     const router = useRouter(); 
-    const activities = [
+    let activities = [
         {
             id: "1",
             start: "2",
@@ -40,6 +40,11 @@ const Home = () => {
             description: "Indeed, i do need to work on it"
         }
     ]
+    const setActivities = (newActivities) => {
+        console.log(activities);
+        activities = [...newActivities];
+        console.log(activities);
+    }
 
     return (
         <SafeAreaView style={styles.container}>
@@ -49,14 +54,14 @@ const Home = () => {
                     headerShadowVisible: false,
                     headerTitle: "Good Morning, Chris",
                     headerRight: () => (
-                        <ActivityMaker activities={activities}/>
+                        <ActivityMaker activities={activities} setActivities={setActivities}/>
                     ),
                 }}
                 
             />
             <ScrollView showsVerticalScrollIndicator={false}>
                 
-                <Activities activities={activities}/>
+                <Activities activities={activities} setActivities={setActivities}/>
                
             </ScrollView>
             
