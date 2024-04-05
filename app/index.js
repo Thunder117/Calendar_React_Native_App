@@ -46,7 +46,7 @@ const Home = () => {
             id: "5",
             start: "2",
             end: "3",
-            date: "2024/04/01",
+            date: "2023/04/01",
             title: "Work in the project", 
             description: "Indeed, i do need to work on it"
         },
@@ -62,26 +62,13 @@ const Home = () => {
             id: "7",
             start: "2",
             end: "3",
-            date: "2024/03/30",
+            date: "2025/04/05",
             title: "Work in the project", 
             description: "Indeed, i do need to work on it"
         }
     ]);
-
-    // Returns the months sorted
-    const sortMonths = (activitiesToSort) => {
-        let sortedMonths = [];
-        for (let currentDate = 1; currentDate < 13; currentDate++) {
-            for (let x in activitiesToSort) {
-                if (currentDate == activitiesToSort[x].date.slice(5,7)) {
-                    sortedMonths.push(activitiesToSort[x]);
-                }
-            }
-        }
-        return sortedMonths;
-    }
-
-    // Returns the days sorted
+    
+    // Returns the activities sorted by days 
     const sortDays = (activitiesToSort) => {
         let sortedDays = [];
         for (let currentDate = 1; currentDate < 32; currentDate++) {
@@ -94,12 +81,54 @@ const Home = () => {
         return sortedDays;
     }
     
+    // Returns the activities sorted by months 
+    const sortMonths = (activitiesToSort) => {
+        let sortedMonths = [];
+        for (let currentDate = 1; currentDate < 13; currentDate++) {
+            for (let x in activitiesToSort) {
+                if (currentDate == activitiesToSort[x].date.slice(5,7)) {
+                    sortedMonths.push(activitiesToSort[x]);
+                }
+            }
+        }
+        return sortedMonths;
+    }
+    
+    // Returns the activities sorted by years 
+    const sortYears = (activitiesToSort) => {
+        let sortedYears = [];
+        let allYears = []
+
+        // Assigns all different years into allYears
+        activitiesToSort.forEach(activity => {
+            const currentYear = activity.date.slice(0,4)
+
+            if(!allYears.includes(currentYear)) {
+                allYears.push(currentYear);
+            }
+        });
+
+        allYears.sort();
+
+        allYears.forEach(currentYear => {
+            for (let x in activitiesToSort) {
+                if (currentYear == activitiesToSort[x].date.slice(0,4)) {
+                    sortedYears.push(activitiesToSort[x]);
+                }
+            }
+        });
+
+        return sortedYears
+    }
+
+    
     // Sorts the activities by date
     const sortActivityDates = (activitiesToSort) => {
         let sortedActivities = [];
-        //sortMinutes
+        //sortHours
         sortedActivities = sortDays(activitiesToSort);
         sortedActivities = sortMonths(sortedActivities);
+        sortedActivities = sortYears(sortedActivities);
        
         sortedActivities.forEach(element => {
             setActivities(a => [...a, element]);
