@@ -70,13 +70,11 @@ const Home = () => {
 
     // Returns the months sorted
     const sortMonths = (activitiesToSort) => {
-        let sortedMonths = []
-        console.log("Sorting months")
-        for (let currentDate = 1; currentDate < 12; currentDate++) {
+        let sortedMonths = [];
+        for (let currentDate = 1; currentDate < 13; currentDate++) {
             for (let x in activitiesToSort) {
                 if (currentDate == activitiesToSort[x].date.slice(5,7)) {
                     sortedMonths.push(activitiesToSort[x]);
-                    console.log(activitiesToSort[x]);
                 }
             }
         }
@@ -85,13 +83,11 @@ const Home = () => {
 
     // Returns the days sorted
     const sortDays = (activitiesToSort) => {
-        let sortedDays = []
-        console.log("Sorting days")
+        let sortedDays = [];
         for (let currentDate = 1; currentDate < 32; currentDate++) {
             for (let x in activitiesToSort) {
                 if (currentDate == activitiesToSort[x].date.slice(-2)) {
                     sortedDays.push(activitiesToSort[x]);
-                    console.log(activitiesToSort[x]);
                 }
             }
         }
@@ -101,9 +97,9 @@ const Home = () => {
     // Sorts the activities by date
     const sortActivityDates = (activitiesToSort) => {
         let sortedActivities = [];
+        //sortMinutes
         sortedActivities = sortDays(activitiesToSort);
         sortedActivities = sortMonths(sortedActivities);
-        //sortMinutes
        
         sortedActivities.forEach(element => {
             setActivities(a => [...a, element]);

@@ -1,13 +1,14 @@
 import { View } from 'react-native'
 import ActivityCard from './ActivityCard';
 import Day from './Day';
+import Month from './Month';
 
 const Activities = (props) => {
     let previousDate = 0;
 
     return(
         <View>
-
+            
             {props.activities.map((activity) => {
 
                 if(activity.date.slice(-2) == previousDate) {
@@ -21,11 +22,14 @@ const Activities = (props) => {
                             key={activity.id}
                         />
                     );
+
                 } else {
+
                     previousDate = activity.date.slice(-2);
-    
                     return(
                         <View key={activity.date}>
+
+                            <Month date={activity.date}/>
                             <Day date={activity.date} key={activity.date}/>
                             <ActivityCard
                                 start={activity.start} 
@@ -34,8 +38,10 @@ const Activities = (props) => {
                                 description={activity.description}
                                 key={activity.id}
                             />
+
                         </View>
                     );
+
                 }
                 
             })}
