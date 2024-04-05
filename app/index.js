@@ -62,8 +62,8 @@ const Home = () => {
     
     // Adds a new activity to activities
     const pushToActivities = (newActivity) => {
-        setActivities([]);
         let activitiesToSort = [...activities, newActivity];
+        setActivities([]);
         sortActivityDates(activitiesToSort);
     }
 
