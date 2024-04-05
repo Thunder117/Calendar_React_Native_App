@@ -49,16 +49,49 @@ const Home = () => {
             date: "2024/04/01",
             title: "Work in the project", 
             description: "Indeed, i do need to work on it"
+        },
+        {
+            id: "6",
+            start: "2",
+            end: "3",
+            date: "2024/03/31",
+            title: "Work in the project", 
+            description: "Indeed, i do need to work on it"
+        },
+        {
+            id: "7",
+            start: "2",
+            end: "3",
+            date: "2024/03/30",
+            title: "Work in the project", 
+            description: "Indeed, i do need to work on it"
         }
     ]);
+
+    // Returns the months sorted
+    const sortMonths = (activitiesToSort) => {
+        let sortedMonths = []
+        console.log("Sorting months")
+        for (let currentDate = 1; currentDate < 12; currentDate++) {
+            for (let x in activitiesToSort) {
+                if (currentDate == activitiesToSort[x].date.slice(5,7)) {
+                    sortedMonths.push(activitiesToSort[x]);
+                    console.log(activitiesToSort[x]);
+                }
+            }
+        }
+        return sortedMonths;
+    }
 
     // Returns the days sorted
     const sortDays = (activitiesToSort) => {
         let sortedDays = []
+        console.log("Sorting days")
         for (let currentDate = 1; currentDate < 32; currentDate++) {
             for (let x in activitiesToSort) {
                 if (currentDate == activitiesToSort[x].date.slice(-2)) {
                     sortedDays.push(activitiesToSort[x]);
+                    console.log(activitiesToSort[x]);
                 }
             }
         }
@@ -68,8 +101,8 @@ const Home = () => {
     // Sorts the activities by date
     const sortActivityDates = (activitiesToSort) => {
         let sortedActivities = [];
-        //sortMonths
         sortedActivities = sortDays(activitiesToSort);
+        sortedActivities = sortMonths(sortedActivities);
         //sortMinutes
        
         sortedActivities.forEach(element => {
