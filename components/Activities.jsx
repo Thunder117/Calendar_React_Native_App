@@ -23,10 +23,10 @@ const Activities = (props) => {
                     );
                 } else {
                     previousDate = activity.date.slice(-2);
-
+    
                     return(
                         <View key={previousDate}>
-                            <Day day={previousDate} key={previousDate}/>
+                            <Day date={activity.date} key={previousDate}/>
                             <ActivityCard
                                 start={activity.start} 
                                 end={activity.end}
