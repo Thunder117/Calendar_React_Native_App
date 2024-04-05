@@ -8,6 +8,7 @@ import styles from './styles';
 const Home = () => {
     const router = useRouter(); 
     // States
+    let [sorted, setSorted] = useState(false);
 	let [activities, setActivities] = useState([
         {
             id: "1",
@@ -27,6 +28,22 @@ const Home = () => {
         },
         {
             id: "3",
+            start: "2",
+            end: "3",
+            date: "2024/04/01",
+            title: "Work in the project", 
+            description: "Indeed, i do need to work on it"
+        },
+        {
+            id: "4",
+            start: "2",
+            end: "3",
+            date: "2024/04/04",
+            title: "Work in the project", 
+            description: "Indeed, i do need to work on it"
+        },
+        {
+            id: "5",
             start: "2",
             end: "3",
             date: "2024/04/01",
@@ -58,6 +75,8 @@ const Home = () => {
         sortedActivities.forEach(element => {
             setActivities(a => [...a, element]);
         });
+
+        setSorted(true);
     }
     
     // Adds a new activity to activities
@@ -95,7 +114,9 @@ const Home = () => {
             />
             <ScrollView showsVerticalScrollIndicator={false}>
                 
-                <Activities activities={activities}/>
+                {sorted &&
+                    <Activities activities={activities}/>
+                }
                
             </ScrollView>
             

@@ -23,5 +23,4 @@ const ActivityCard = (props) => {
     );
 }
 
-export default ActivityCard
-    
+export default ActivityCard;

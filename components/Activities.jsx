@@ -3,26 +3,45 @@ import ActivityCard from './ActivityCard';
 import Day from './Day';
 
 const Activities = (props) => {
+    let previousDate = 0;
 
     return(
         <View>
 
-            <Day/>
             {props.activities.map((activity) => {
-                return (
-                    <ActivityCard
-                        start={activity.start} 
-                        end={activity.end}
-                        title={activity.title}
-                        description={activity.description}
-                        key={activity.id}
-                    />
-                );
+
+                if(activity.date.slice(-2) == previousDate) {
+
+                    return(
+                        <ActivityCard
+                            start={activity.start} 
+                            end={activity.end}
+                            title={activity.title}
+                            description={activity.description}
+                            key={activity.id}
+                        />
+                    );
+                } else {
+                    previousDate = activity.date.slice(-2);
+
+                    return(
+                        <View key={previousDate}>
+                            <Day day={previousDate} key={previousDate}/>
+                            <ActivityCard
+                                start={activity.start} 
+                                end={activity.end}
+                                title={activity.title}
+                                description={activity.description}
+                                key={activity.id}
+                            />
+                        </View>
+                    );
+                }
+                
             })}
 
         </View>
     );
 }
 
-export default Activities
-    
+export default Activities;

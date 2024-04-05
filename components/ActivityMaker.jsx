@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { View, TouchableOpacity } from 'react-native'
-import { getToday, getFormatedDate } from 'react-native-modern-datepicker';
+import { getFormatedDate } from 'react-native-modern-datepicker';
 import { AntDesign } from '@expo/vector-icons';
 import styles from './styles';
 import Calendar from './Calendar';
