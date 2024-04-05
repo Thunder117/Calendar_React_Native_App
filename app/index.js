@@ -36,12 +36,12 @@ const Home = () => {
     ]);
 
     // Returns the days sorted
-    const sortDays = (datesToSort) => {
+    const sortDays = (activitiesToSort) => {
         let sortedDays = []
         for (let currentDate = 1; currentDate < 32; currentDate++) {
-            for (let x in datesToSort) {
-                if (currentDate == datesToSort[x].date.slice(-2)) {
-                    sortedDays.push(datesToSort[x]);
+            for (let x in activitiesToSort) {
+                if (currentDate == activitiesToSort[x].date.slice(-2)) {
+                    sortedDays.push(activitiesToSort[x]);
                 }
             }
         }
@@ -49,10 +49,10 @@ const Home = () => {
     }
     
     // Sorts the activities by date
-    const sortActivityDates = (datesToSort) => {
+    const sortActivityDates = (activitiesToSort) => {
         let sortedActivities = [];
         //sortMonths
-        sortedActivities = sortDays(datesToSort);
+        sortedActivities = sortDays(activitiesToSort);
         //sortMinutes
        
         sortedActivities.forEach(element => {
