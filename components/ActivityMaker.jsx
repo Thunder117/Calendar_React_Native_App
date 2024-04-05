@@ -40,29 +40,27 @@ const ActivityMaker = (props) => {
         toggleActivityMakerCard();
     }
 
+    // Returns the highest id number in the activities array of objects
     const findHighestId = () => {
         return Math.max(...props.activities.map(o => o.id));
     }
     
     const createActivity = () => {
         highestId = findHighestId();
-        props.activities.push(
-            {
-                id: highestId + 1,
-                start: "2",
-                end: "3",
-                date: date,
-                title: activityTitle, 
-                description: activityDescription
-            }
-        );
+        props.pushToActivities({
+            id: highestId + 1,
+            start: "2",
+            end: "3",
+            date: date,
+            title: activityTitle, 
+            description: activityDescription
+        })
     }
 
     ///////////////////////////////////////
     const handleConfirmActivity = () => {
         toggleActivityMakerCard();
         createActivity();
-        console.log(props.activities);
     }
 
 
