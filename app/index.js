@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { ActivityMaker, Home, Activities } from '../components';
+import { NavigationContainer } from '@react-navigation/native'
+import { ActivityMaker, Home, ActivityDetails } from '../components';
 import { COLORS } from '../constants';
 
 const Stack = createNativeStackNavigator();
@@ -155,25 +156,27 @@ const App = () => {
     }, []);
 
     return (
-        <Stack.Navigator>
-            <Stack.Screen 
-                name='home'
-                options={{
-                    headerStyle: { backgroundColor: COLORS.white },
-                    headerShadowVisible: false,
-                    headerTitle: "Welcome back, Chris",
-                    headerRight: () => (
-                        
-                        <ActivityMaker activities={activities} pushToActivities={pushToActivities}/>
-                        
-                    )
-                }}
-            >
-
-                {() => <Home activities={activities} sorted={sorted}/>}
-               
-            </Stack.Screen>
-        </Stack.Navigator>
+        <NavigationContainer independent={true}>
+            <Stack.Navigator>
+                <Stack.Screen 
+                    name='Home'
+                    options={{
+                        headerStyle: { backgroundColor: COLORS.white },
+                        headerShadowVisible: false,
+                        headerTitle: "Welcome back, Chris",
+                        headerRight: () => (
+                            <ActivityMaker activities={activities} pushToActivities={pushToActivities}/>
+                        )
+                    }}
+                >
+                    {() => <Home activities={activities} sorted={sorted}/>}
+                </Stack.Screen>
+                <Stack.Screen 
+                    name='ActivityDetails'
+                    component={ActivityDetails}
+                />
+            </Stack.Navigator>
+        </NavigationContainer>
     )
 }
 

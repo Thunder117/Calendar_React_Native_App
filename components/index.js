@@ -5,6 +5,7 @@ import Activities from './Activities';
 import ActivityMaker from './ActivityMaker';
 import ActivityMakerCard from './ActivityMakerCard';
 import Home from './Home';
+import ActivityDetails from './ActivityDetails';
 
 export {
   Calendar,
@@ -13,5 +14,6 @@ export {
   Activities,
   ActivityMaker,
   ActivityMakerCard,
-  Home
+  Home,
+  ActivityDetails
 };

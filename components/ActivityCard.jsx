@@ -1,22 +1,24 @@
 import { View, Text, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 
-const ActivityCard = (props) => {
+const ActivityCard = ({title, description, start, end}) => {
+    const navigation = useNavigation();
 
     return(
-        <TouchableOpacity style={styles.cardContainer} onPress={() => console.log("pressed")}>
+        <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate("ActivityDetails")}>
             <View style={styles.cardSubContainer}>
                 <View>
                     <Text style={styles.cardDescription}>
-                        {props.title}
+                        {title}
                     </Text>
                     <Text>
-                        {props.description}
+                        {description}
                     </Text>
                 </View>
                 <View>
-                    <Text style={styles.cardTime}>{props.start}</Text>
-                    <Text style={styles.cardTime}>{props.end}</Text>
+                    <Text style={styles.cardTime}>{start}</Text>
+                    <Text style={styles.cardTime}>{end}</Text>
                 </View>
             </View>
         </TouchableOpacity>
