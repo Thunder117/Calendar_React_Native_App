@@ -4,7 +4,7 @@ import styles from './styles';
 const ActivityCard = (props) => {
 
     return(
-        <TouchableOpacity style={styles.cardContainer}>
+        <TouchableOpacity style={styles.cardContainer} onPress={() => console.log("pressed")}>
             <View style={styles.cardSubContainer}>
                 <View>
                     <Text style={styles.cardDescription}>

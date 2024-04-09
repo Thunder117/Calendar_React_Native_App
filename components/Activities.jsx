@@ -8,11 +8,11 @@ const Activities = (props) => {
     let previousDate = 0;
     let previousMonth = 0;
     let previousYear = 0;
-
+    
     return(
         <View>
             
-            {props.activities.map((activity) => {
+            { props.activities.map((activity) => {
                 const currentDate = activity.date.slice(-2);
                 const currentMonth = activity.date.slice(5,7);
                 const currentYear = activity.date.slice(0,4);
@@ -80,11 +80,10 @@ const Activities = (props) => {
                         key={activity.id}
                     />
                 );
-                
             })}
 
         </View>
     );
-}
+};
 
 export default Activities;

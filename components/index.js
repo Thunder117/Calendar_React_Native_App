@@ -4,6 +4,7 @@ import Day from './Day';
 import Activities from './Activities';
 import ActivityMaker from './ActivityMaker';
 import ActivityMakerCard from './ActivityMakerCard';
+import Home from './Home';
 
 export {
   Calendar,
@@ -11,5 +12,6 @@ export {
   Day,
   Activities,
   ActivityMaker,
-  ActivityMakerCard
+  ActivityMakerCard,
+  Home
 };

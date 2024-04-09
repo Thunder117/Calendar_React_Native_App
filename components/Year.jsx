@@ -5,7 +5,6 @@ const Year = (props) => {
     const dateInString = props.date // Date passed by parent in string
     const dateInNumberYear = dateInString.slice(0,4); // Year passed by parent in number
 
-    console.log(dateInNumberYear)
     return(
         <View style={styles.dayContainer}> 
 

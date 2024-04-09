@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
-import { ScrollView, SafeAreaView } from 'react-native';
-import { Stack, useRouter } from 'expo-router';
-import { Activities, ActivityMaker } from '../components';
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { ActivityMaker, Home, Activities } from '../components';
 import { COLORS } from '../constants';
-import styles from './styles';
 
-const Home = () => {
-    const router = useRouter(); 
+const Stack = createNativeStackNavigator();
+
+const App = () => {
     // States
     let [sorted, setSorted] = useState(false);
 	let [activities, setActivities] = useState([
@@ -156,30 +155,26 @@ const Home = () => {
     }, []);
 
     return (
-        <SafeAreaView style={styles.container}>
-            <Stack.Screen
+        <Stack.Navigator>
+            <Stack.Screen 
+                name='home'
                 options={{
                     headerStyle: { backgroundColor: COLORS.white },
                     headerShadowVisible: false,
-                    headerTitle: "Good Morning, Chris",
+                    headerTitle: "Welcome back, Chris",
                     headerRight: () => (
                         
                         <ActivityMaker activities={activities} pushToActivities={pushToActivities}/>
                         
-                    ),
+                    )
                 }}
-                
-            />
-            <ScrollView showsVerticalScrollIndicator={false}>
-                
-                {sorted &&
-                    <Activities activities={activities}/>
-                }
+            >
+
+                {() => <Home activities={activities} sorted={sorted}/>}
                
-            </ScrollView>
-            
-        </SafeAreaView>
+            </Stack.Screen>
+        </Stack.Navigator>
     )
 }
 
-export default Home;
+export default App;
