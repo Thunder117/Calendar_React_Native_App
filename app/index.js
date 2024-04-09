@@ -161,8 +161,6 @@ const App = () => {
                 <Stack.Screen 
                     name='Home'
                     options={{
-                        headerStyle: { backgroundColor: COLORS.white },
-                        headerShadowVisible: false,
                         headerTitle: "Welcome back, Chris",
                         headerRight: () => (
                             <ActivityMaker activities={activities} pushToActivities={pushToActivities}/>

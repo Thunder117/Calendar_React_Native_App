@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 
-const ActivityCard = ({title, description, start, end}) => {
+const ActivityCard = (props) => {
     const navigation = useNavigation();
 
     return(
@@ -10,15 +10,15 @@ const ActivityCard = ({title, description, start, end}) => {
             <View style={styles.cardSubContainer}>
                 <View>
                     <Text style={styles.cardDescription}>
-                        {title}
+                        {props.title}
                     </Text>
                     <Text>
-                        {description}
+                        {props.description}
                     </Text>
                 </View>
                 <View>
-                    <Text style={styles.cardTime}>{start}</Text>
-                    <Text style={styles.cardTime}>{end}</Text>
+                    <Text style={styles.cardTime}>{props.start}</Text>
+                    <Text style={styles.cardTime}>{props.end}</Text>
                 </View>
             </View>
         </TouchableOpacity>
