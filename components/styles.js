@@ -53,18 +53,19 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     yearText: {
-        fontSize:SIZES.large,
+        fontSize:SIZES.xLarge,
         fontWeight: FONT_WEIGHTS.bold
     },
     monthContainer: {
         padding: SIZES.xSmall,
+        alignItems: 'center'
     },
     monthText: {
         fontSize:SIZES.large,
-        fontWeight: FONT_WEIGHTS.bold
+        fontWeight: FONT_WEIGHTS.semiBold
     },
     dayContainer: {
-        padding: SIZES.small
+        padding: SIZES.xxSmall
     },
     dayText: {
         fontSize:SIZES.large,

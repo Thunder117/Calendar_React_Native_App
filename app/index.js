@@ -12,56 +12,42 @@ const App = () => {
 	let [activities, setActivities] = useState([
         {
             id: "1",
-            start: "2",
-            end: "3",
             date: "2024/04/03",
             title: "Work in the project", 
             description: "Indeed, i do need to work on it"
         },
         {
             id: "2",
-            start: "2",
-            end: "3",
             date: "2024/04/02",
             title: "Work in the project", 
             description: "Indeed, i do need to work on it"
         },
         {
             id: "3",
-            start: "2",
-            end: "3",
             date: "2024/04/01",
             title: "Work in the project", 
             description: "Indeed, i do need to work on it"
         },
         {
             id: "4",
-            start: "2",
-            end: "3",
             date: "2024/04/04",
             title: "Work in the project", 
             description: "Indeed, i do need to work on it"
         },
         {
             id: "5",
-            start: "2",
-            end: "3",
             date: "2023/04/01",
             title: "Work in the project", 
             description: "Indeed, i do need to work on it"
         },
         {
             id: "6",
-            start: "2",
-            end: "3",
             date: "2024/03/31",
             title: "Work in the project", 
             description: "Indeed, i do need to work on it"
         },
         {
             id: "7",
-            start: "2",
-            end: "3",
             date: "2025/04/05",
             title: "Work in the project", 
             description: "Indeed, i do need to work on it"
@@ -125,7 +111,6 @@ const App = () => {
     // Sorts the activities by date
     const sortActivityDates = (activitiesToSort) => {
         let sortedActivities = [];
-        //sortHours
         sortedActivities = sortDays(activitiesToSort);
         sortedActivities = sortMonths(sortedActivities);
         sortedActivities = sortYears(sortedActivities);
@@ -162,6 +147,12 @@ const App = () => {
                     name='Home'
                     options={{
                         headerTitle: "Welcome back, Chris",
+                        headerStyle: {
+                            backgroundColor: COLORS.primary
+                        },
+                        headerTitleStyle: {
+                            fon: 'bold',
+                        },
                         headerRight: () => (
                             <ActivityMaker activities={activities} pushToActivities={pushToActivities}/>
                         )

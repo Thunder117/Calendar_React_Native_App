@@ -1,4 +1,5 @@
 const SIZES = {
+	xxSmall: 5,
 	xSmall: 10,
 	small: 12,
 	medium: 16,
@@ -8,7 +9,7 @@ const SIZES = {
 };
 
 const COLORS = {
-	primary: "#47B5FF",
+	primary: "#1E81B0",
 	secondary: "#FB6D48",
 
 	gray: "#83829A",

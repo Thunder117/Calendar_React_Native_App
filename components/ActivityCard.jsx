@@ -23,10 +23,9 @@ const ActivityCard = (props) => {
                         {props.description}
                     </Text>
                 </View>
-                <View>
-                    <Text style={styles.cardTime}>{props.start}</Text>
-                    <Text style={styles.cardTime}>{props.end}</Text>
-                </View>
+                <Text>
+                    Completed?
+                </Text>
             </View>
         </TouchableOpacity>
     );
