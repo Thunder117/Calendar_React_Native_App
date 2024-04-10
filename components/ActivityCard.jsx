@@ -16,10 +16,10 @@ const ActivityCard = (props) => {
         >
             <View style={styles.cardSubContainer}>
                 <View>
-                    <Text style={styles.cardDescription}>
+                    <Text style={styles.cardTitle}>
                         {props.title}
                     </Text>
-                    <Text>
+                    <Text style={styles.cardDescription}>
                         {props.description}
                     </Text>
                 </View>

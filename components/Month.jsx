@@ -13,9 +13,9 @@ const Month = (props) => {
     const dateInStringMonth = months[date.getMonth()] // Month passed by parent in string
 
     return(
-        <View style={styles.dayContainer}> 
+        <View style={styles.monthContainer}> 
 
-            <Text>
+            <Text style={styles.monthText}>
                 { dateInStringMonth }
             </Text>
 

@@ -42,11 +42,29 @@ const styles = StyleSheet.create({
         fontSize:SIZES.xLarge,
         fontWeight: FONT_WEIGHTS.regular
     },
-    cardDescription: {
+    cardTitle: {
         fontSize:SIZES.large
     },
+    cardDescription: {
+        fontSize:SIZES.medium
+    },
+    yearContainer: {
+        padding: SIZES.xSmall,
+        alignItems: 'center'
+    },
+    yearText: {
+        fontSize:SIZES.large,
+        fontWeight: FONT_WEIGHTS.bold
+    },
+    monthContainer: {
+        padding: SIZES.xSmall,
+    },
+    monthText: {
+        fontSize:SIZES.large,
+        fontWeight: FONT_WEIGHTS.bold
+    },
     dayContainer: {
-        padding: SIZES.small,
+        padding: SIZES.small
     },
     dayText: {
         fontSize:SIZES.large,

@@ -6,9 +6,9 @@ const Year = (props) => {
     const dateInNumberYear = dateInString.slice(0,4); // Year passed by parent in number
 
     return(
-        <View style={styles.dayContainer}> 
+        <View style={styles.yearContainer}> 
 
-            <Text>
+            <Text style={styles.yearText}>
                 { dateInNumberYear }
             </Text>
 

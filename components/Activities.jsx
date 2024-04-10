@@ -3,6 +3,7 @@ import ActivityCard from './ActivityCard';
 import Day from './Day';
 import Month from './Month';
 import Year from './Year';
+import styles from './styles';
 
 const Activities = (props) => {
     let previousDate = 0;
@@ -10,7 +11,7 @@ const Activities = (props) => {
     let previousYear = 0;
     
     return(
-        <View>
+        <View style={styles.centeredView}>
             
             { props.activities.map((activity) => {
                 const currentDate = activity.date.slice(-2);
