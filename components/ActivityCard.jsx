@@ -6,7 +6,14 @@ const ActivityCard = (props) => {
     const navigation = useNavigation();
 
     return(
-        <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate("ActivityDetails")}>
+        <TouchableOpacity 
+        style={styles.cardContainer} 
+        onPress={() => 
+            navigation.navigate("ActivityDetails", {
+                title: props.title, description: props.description
+            })
+        }
+        >
             <View style={styles.cardSubContainer}>
                 <View>
                     <Text style={styles.cardDescription}>

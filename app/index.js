@@ -169,10 +169,7 @@ const App = () => {
                 >
                     {() => <Home activities={activities} sorted={sorted}/>}
                 </Stack.Screen>
-                <Stack.Screen 
-                    name='ActivityDetails'
-                    component={ActivityDetails}
-                />
+                <Stack.Screen name="ActivityDetails" component={ActivityDetails}/>
             </Stack.Navigator>
         </NavigationContainer>
     )
