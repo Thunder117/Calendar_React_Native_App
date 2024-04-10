@@ -54,7 +54,9 @@ const ActivityMaker = (props) => {
             date: date,
             title: activityTitle, 
             description: activityDescription
-        })
+        });
+        setActivityTitle("");
+        setActivityDescription("");
     }
 
     ///////////////////////////////////////
