@@ -9,7 +9,7 @@ const SIZES = {
 };
 
 const COLORS = {
-	primary: "#1E81B0",
+	primary: "#124c6a",
 	secondary: "#FB6D48",
 
 	gray: "#83829A",

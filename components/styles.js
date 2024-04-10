@@ -38,15 +38,33 @@ const styles = StyleSheet.create({
 	    flexDirection: 'row',
         justifyContent: 'space-between'
     },
+    cardSubContainer1: {
+        flex: 5
+    },
+    cardSubContainer2: {
+        flex: 1,
+        justifyContent: 'space-between',
+        height: '100%'
+    },
     cardTime: {
         fontSize:SIZES.xLarge,
         fontWeight: FONT_WEIGHTS.regular
     },
+    doneButton: {
+        padding: SIZES.xSmall
+    },
+    trashButton: {
+        padding: SIZES.xxSmall,
+        alignSelf: 'flex-end',
+        width: 35
+    },
     cardTitle: {
-        fontSize:SIZES.large
+        fontSize:SIZES.large,
+        flex:1
     },
     cardDescription: {
-        fontSize:SIZES.medium
+        fontSize:SIZES.medium,
+        flex:2
     },
     yearContainer: {
         padding: SIZES.xSmall,
@@ -69,7 +87,7 @@ const styles = StyleSheet.create({
     },
     dayText: {
         fontSize:SIZES.large,
-        fontWeight: FONT_WEIGHTS.regular
+        fontWeight: FONT_WEIGHTS.semiBold
     },
     dayHighlight: {
         fontWeight: FONT_WEIGHTS.medium

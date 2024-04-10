@@ -1,5 +1,7 @@
 import { View, Text, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
+import { AntDesign } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 import styles from './styles';
 
 const ActivityCard = (props) => {
@@ -15,7 +17,7 @@ const ActivityCard = (props) => {
         }
         >
             <View style={styles.cardSubContainer}>
-                <View>
+                <View style={styles.cardSubContainer1}>
                     <Text style={styles.cardTitle}>
                         {props.title}
                     </Text>
@@ -23,9 +25,14 @@ const ActivityCard = (props) => {
                         {props.description}
                     </Text>
                 </View>
-                <Text>
-                    Completed?
-                </Text>
+                <View style={styles.cardSubContainer2}>
+                    <TouchableOpacity style={styles.doneButton}>
+                        <AntDesign name="check" size={32} color="black" />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.trashButton}>
+                        <Feather name="trash" size={24} color="black" />
+                    </TouchableOpacity>
+                </View>
             </View>
         </TouchableOpacity>
     );

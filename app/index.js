@@ -148,10 +148,11 @@ const App = () => {
                     options={{
                         headerTitle: "Welcome back, Chris",
                         headerStyle: {
-                            backgroundColor: COLORS.primary
+                            backgroundColor: COLORS.primary,
                         },
                         headerTitleStyle: {
-                            fon: 'bold',
+                            fontWeight: 'bold',
+                            color: 'white'
                         },
                         headerRight: () => (
                             <ActivityMaker activities={activities} pushToActivities={pushToActivities}/>

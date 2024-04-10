@@ -69,7 +69,7 @@ const ActivityMaker = (props) => {
     return (
         <View>
             <TouchableOpacity style={styles.calendarButton} onPress={toggleCalendar}>
-                <AntDesign name="plus" size={28} color="black" />
+                <AntDesign name="plus" size={28} color="white" />
             </TouchableOpacity>
 
             <Calendar
