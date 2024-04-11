@@ -10,7 +10,7 @@ const Home = (props) => {
             <ScrollView showsVerticalScrollIndicator={false}>
                 {props.sorted &&
                     <View>
-                        <StatusBar backgroundColor={COLORS.primary} />
+                        <StatusBar animated={true} backgroundColor={COLORS.primary} />
                         <Activities activities={props.activities} sorted={props.sorted}/>
                     </View>
                 }

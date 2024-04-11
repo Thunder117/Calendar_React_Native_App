@@ -28,8 +28,6 @@ const Activities = (props) => {
                             <Month date={activity.date} key={previousMonth}/>
                             <Day date={activity.date} key={activity.date}/>
                             <ActivityCard
-                                start={activity.start} 
-                                end={activity.end}
                                 title={activity.title}
                                 description={activity.description}
                                 key={activity.id}
@@ -46,8 +44,6 @@ const Activities = (props) => {
                             <Month date={activity.date} key={previousMonth}/>
                             <Day date={activity.date} key={activity.date}/>
                             <ActivityCard
-                                start={activity.start} 
-                                end={activity.end}
                                 title={activity.title}
                                 description={activity.description}
                                 key={activity.id}
@@ -62,8 +58,6 @@ const Activities = (props) => {
                         <View key={activity.date}>
                             <Day date={activity.date} key={activity.date}/>
                             <ActivityCard
-                                start={activity.start} 
-                                end={activity.end}
                                 title={activity.title}
                                 description={activity.description}
                                 key={activity.id}
@@ -74,8 +68,6 @@ const Activities = (props) => {
 
                 return(
                     <ActivityCard
-                        start={activity.start} 
-                        end={activity.end}
                         title={activity.title}
                         description={activity.description}
                         key={activity.id}

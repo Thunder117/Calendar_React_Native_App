@@ -12,45 +12,24 @@ const App = () => {
 	let [activities, setActivities] = useState([
         {
             id: "1",
-            date: "2024/04/03",
+            date: "2024/04/10",
             title: "Work in the project", 
-            description: "Indeed, i do need to work on it"
+            description: "Indeed, i do need to work on it",
+            done: false
         },
         {
             id: "2",
-            date: "2024/04/02",
-            title: "Work in the project", 
-            description: "Indeed, i do need to work on it"
+            date: "2024/04/11",
+            title: "Do groceries", 
+            description: "Indeed, i do need to work on it",
+            done: false
         },
         {
             id: "3",
-            date: "2024/04/01",
-            title: "Work in the project", 
-            description: "Indeed, i do need to work on it"
-        },
-        {
-            id: "4",
-            date: "2024/04/04",
-            title: "Work in the project", 
-            description: "Indeed, i do need to work on it"
-        },
-        {
-            id: "5",
-            date: "2023/04/01",
-            title: "Work in the project", 
-            description: "Indeed, i do need to work on it"
-        },
-        {
-            id: "6",
-            date: "2024/03/31",
-            title: "Work in the project", 
-            description: "Indeed, i do need to work on it"
-        },
-        {
-            id: "7",
-            date: "2025/04/05",
-            title: "Work in the project", 
-            description: "Indeed, i do need to work on it"
+            date: "2024/04/12",
+            title: "Finish reading that book", 
+            description: "I'm almost done, only 48 pages left.",
+            done: false
         }
     ]);
     
@@ -142,18 +121,21 @@ const App = () => {
 
     return (
         <NavigationContainer independent={true}>
-            <Stack.Navigator>
+            <Stack.Navigator 
+            screenOptions={{
+                headerStyle: {
+                    backgroundColor: COLORS.primary,
+                },
+                headerTintColor: 'white',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                    color: 'white'
+                },
+            }}>
                 <Stack.Screen 
                     name='Home'
                     options={{
                         headerTitle: "Welcome back, Chris",
-                        headerStyle: {
-                            backgroundColor: COLORS.primary,
-                        },
-                        headerTitleStyle: {
-                            fontWeight: 'bold',
-                            color: 'white'
-                        },
                         headerRight: () => (
                             <ActivityMaker activities={activities} pushToActivities={pushToActivities}/>
                         )
