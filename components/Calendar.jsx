@@ -18,8 +18,10 @@ const Calendar = (props) => {
 					onDateChange={props.handleChange}
 					/>
 
-					<TouchableOpacity onPress={props.handleConfirmDate}>
-						<Text>Confirm</Text>
+					<TouchableOpacity 
+					style={styles.confirmButton}
+					onPress={props.handleConfirmDate}>
+						<Text style={styles.confirmButtonText}>Confirm</Text>
 					</TouchableOpacity>
 
 				</View>

@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
     "@react-navigation/native-stack": "^6.9.26",
     "axios": "^1.6.8",
     "babel-preset-expo": "^10.0.1",

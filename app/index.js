@@ -120,32 +120,32 @@ const App = () => {
     }, []);
 
     return (
-        <NavigationContainer independent={true}>
-            <Stack.Navigator 
-            screenOptions={{
-                headerStyle: {
-                    backgroundColor: COLORS.primary,
-                },
-                headerTintColor: 'white',
-                headerTitleStyle: {
-                    fontWeight: 'bold',
-                    color: 'white'
-                },
-            }}>
-                <Stack.Screen 
-                    name='Home'
-                    options={{
-                        headerTitle: "Welcome back, Chris",
-                        headerRight: () => (
-                            <ActivityMaker activities={activities} pushToActivities={pushToActivities}/>
-                        )
-                    }}
-                >
-                    {() => <Home activities={activities} sorted={sorted}/>}
-                </Stack.Screen>
-                <Stack.Screen name="ActivityDetails" component={ActivityDetails}/>
-            </Stack.Navigator>
-        </NavigationContainer>
+            <NavigationContainer independent={true}>
+                <Stack.Navigator 
+                screenOptions={{
+                    headerStyle: {
+                        backgroundColor: COLORS.primary,
+                    },
+                    headerTintColor: 'white',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                        color: 'white'
+                    },
+                }}>
+                    <Stack.Screen 
+                        name='Home'
+                        options={{
+                            headerTitle: "Welcome back, Chris",
+                            headerRight: () => (
+                                <ActivityMaker activities={activities} pushToActivities={pushToActivities}/>
+                            )
+                        }}
+                    >
+                        {() => <Home activities={activities} sorted={sorted}/>}
+                    </Stack.Screen>
+                    <Stack.Screen name="ActivityDetails" component={ActivityDetails}/>
+                </Stack.Navigator>
+            </NavigationContainer>
     )
 }
 

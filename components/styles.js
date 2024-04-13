@@ -4,11 +4,13 @@ import { COLORS, SIZES, FONT_WEIGHTS, SHADOWS } from "../constants";
 
 const styles = StyleSheet.create({
     home: {
-        backgroundColor: COLORS.secondary,
         height: '100%'
     },
     centeredView: {
-        justifyContent: 'center'
+        height:'100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignContent: 'center'
     },
 	modalView: {
         margin: 20,
@@ -26,31 +28,59 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 5
 	},
+    confirmButton: {
+        padding:SIZES.medium,
+        borderRadius:20,
+        color:'white',
+        backgroundColor: COLORS.tertiary,
+    },
+    confirmButtonText: {
+        color:'white',
+        fontWeight: FONT_WEIGHTS.semiBold
+    },
     activitiesContainer: {
         width: '100%'
     },
     cardContainer: {
         width: '100%',
         height: 100,
-        padding: SIZES.medium,
-        margin:1,
-        backgroundColor: COLORS.tertiary,
+        marginTop:1,
+        marginBottom:1,
+        backgroundColor: COLORS.lightGray,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
         ...SHADOWS.small
     },
-    cardSubContainer: {
-	    flexDirection: 'row',
-        justifyContent: 'space-between'
+    cardSubContainer0: {
+        flex: 1,
+        backgroundColor: COLORS.green
     },
     cardSubContainer1: {
-        flex: 5
+        padding: SIZES.medium,
+        flex: 15,
     },
     cardSubContainer2: {
-        flex: 1,
-        justifyContent: 'space-between',
-        height: '100%'
+        flex: 3,
+        padding: SIZES.medium,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    activityMakerCardSubContainer: {
+        flexDirection: "column",
+        width: '100%',
+        padding:8,
+        marginBottom:20
+    },
+    activityMakerCardTitle: {
+        fontSize: 20
+    },
+    activityMakerCardDescription: {
+        fontSize: 15
     },
     doneButton: {
-        padding: SIZES.xSmall
+        backgroundColor: COLORS.green,
+        padding: 7,
+        borderRadius: 100,
     },
     trashButton: {
         padding: SIZES.xxSmall,
@@ -59,12 +89,11 @@ const styles = StyleSheet.create({
     },
     cardTitle: {
         fontSize:SIZES.medium,
-        color: 'white',
+        fontWeight: FONT_WEIGHTS.bold,
         flex:1
     },
     cardDescription: {
         fontSize:SIZES.medium,
-        color: 'white',
         flex:2
     },
     yearContainer: {
@@ -73,8 +102,7 @@ const styles = StyleSheet.create({
     },
     yearText: {
         fontSize:SIZES.xLarge,
-        fontWeight: FONT_WEIGHTS.semiBold,
-        color: 'white'
+        fontWeight: FONT_WEIGHTS.semiBold
     },
     monthContainer: {
         padding: SIZES.xxSmall,
@@ -82,8 +110,7 @@ const styles = StyleSheet.create({
     },
     monthText: {
         fontSize: SIZES.large,
-        fontWeight: FONT_WEIGHTS.semiBold,
-        color: 'white'
+        fontWeight: FONT_WEIGHTS.semiBold
     },
     dayContainer: {
         flexDirection: 'row',
@@ -92,13 +119,11 @@ const styles = StyleSheet.create({
     },
     dayText: {
         fontSize: SIZES.medium,
-        fontWeight: FONT_WEIGHTS.medium,
-        color: 'white'
+        fontWeight: FONT_WEIGHTS.medium
     },
     dayNumberText: {
         fontSize: SIZES.medium,
-        fontWeight: FONT_WEIGHTS.regular,
-        color: 'white'
+        fontWeight: FONT_WEIGHTS.regular
     },
     dayHighlight: {
         fontWeight: FONT_WEIGHTS.medium

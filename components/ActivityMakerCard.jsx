@@ -7,21 +7,25 @@ const ActivityMakerCard = (props) => {
 		<Modal animationType='slide' transparent={true} visible={props.activityMakerCard}>
 			<View style={styles.centeredView}>
 				<View style={styles.modalView}>
+					<View style={styles.activityMakerCardSubContainer}>
+						<TextInput
+							style={styles.activityMakerCardTitle}
+							onChangeText={props.setActivityTitle}
+							value={props.activityTitle}
+							placeholder='Finish that book...'
+						/>
 
-					<TextInput
-						onChangeText={props.setActivityTitle}
-						value={props.activityTitle}
-						placeholder='Placeholder for activityTitle'
-					/>
+						<TextInput
+							style={styles.activityMakerCardDescription}
+							onChangeText={props.setActivityDescription}
+							value={props.activityDescription}
+							placeholder='Only 50 pages left'
+							multiline
+						/>
+					</View>
 
-					<TextInput
-						onChangeText={props.setActivityDescription}
-						value={props.activityDescription}
-						placeholder='Placeholder for activityDescription'
-					/>
-
-                    <TouchableOpacity onPress={props.handleConfirmActivity}>
-						<Text>Confirm</Text>
+                    <TouchableOpacity style={styles.confirmButton} onPress={props.handleConfirmActivity}>
+						<Text style={styles.confirmButtonText}>Confirm</Text>
 					</TouchableOpacity>
 
 				</View>
