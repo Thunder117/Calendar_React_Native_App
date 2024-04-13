@@ -23,7 +23,7 @@ const Activities = (props) => {
                     previousMonth = currentMonth;
                     previousYear = currentYear;
                     return(
-                        <View key={activity.date}>
+                        <View style={styles.activitiesContainer} key={activity.date}>
                             <Year date={activity.date} key={previousYear}/>
                             <Month date={activity.date} key={previousMonth}/>
                             <Day date={activity.date} key={activity.date}/>
@@ -40,7 +40,7 @@ const Activities = (props) => {
                     previousDate = currentDate;
                     previousMonth = currentMonth;
                     return(
-                        <View key={activity.date}>
+                        <View style={styles.activitiesContainer} key={activity.date}>
                             <Month date={activity.date} key={previousMonth}/>
                             <Day date={activity.date} key={activity.date}/>
                             <ActivityCard
@@ -55,7 +55,7 @@ const Activities = (props) => {
                 if(currentDate != previousDate) {
                     previousDate = currentDate;
                     return(
-                        <View key={activity.date}>
+                        <View style={styles.activitiesContainer} key={activity.date}>
                             <Day date={activity.date} key={activity.date}/>
                             <ActivityCard
                                 title={activity.title}
@@ -67,7 +67,7 @@ const Activities = (props) => {
                 } 
 
                 return(
-                    <ActivityCard
+                    <ActivityCard style={styles.activitiesContainer}
                         title={activity.title}
                         description={activity.description}
                         key={activity.id}

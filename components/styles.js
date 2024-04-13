@@ -3,12 +3,13 @@ import { StyleSheet } from "react-native";
 import { COLORS, SIZES, FONT_WEIGHTS, SHADOWS } from "../constants";
 
 const styles = StyleSheet.create({
+    home: {
+        backgroundColor: COLORS.secondary,
+        height: '100%'
+    },
     centeredView: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 22,
-        },
+        justifyContent: 'center'
+    },
 	modalView: {
         margin: 20,
         backgroundColor: 'white',
@@ -25,13 +26,15 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 5
 	},
+    activitiesContainer: {
+        width: '100%'
+    },
     cardContainer: {
-        width: 340,
-        height: 120,
+        width: '100%',
+        height: 100,
         padding: SIZES.medium,
-        margin: 4,
-        backgroundColor: COLORS.lightWhite,
-        borderRadius: SIZES.small,
+        margin:1,
+        backgroundColor: COLORS.tertiary,
         ...SHADOWS.small
     },
     cardSubContainer: {
@@ -46,10 +49,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         height: '100%'
     },
-    cardTime: {
-        fontSize:SIZES.xLarge,
-        fontWeight: FONT_WEIGHTS.regular
-    },
     doneButton: {
         padding: SIZES.xSmall
     },
@@ -59,35 +58,47 @@ const styles = StyleSheet.create({
         width: 35
     },
     cardTitle: {
-        fontSize:SIZES.large,
+        fontSize:SIZES.medium,
+        color: 'white',
         flex:1
     },
     cardDescription: {
         fontSize:SIZES.medium,
+        color: 'white',
         flex:2
     },
     yearContainer: {
-        padding: SIZES.xSmall,
+        padding: SIZES.xxSmall,
         alignItems: 'center'
     },
     yearText: {
         fontSize:SIZES.xLarge,
-        fontWeight: FONT_WEIGHTS.bold
+        fontWeight: FONT_WEIGHTS.semiBold,
+        color: 'white'
     },
     monthContainer: {
-        padding: SIZES.xSmall,
+        padding: SIZES.xxSmall,
         alignItems: 'center'
     },
     monthText: {
-        fontSize:SIZES.large,
-        fontWeight: FONT_WEIGHTS.semiBold
+        fontSize: SIZES.large,
+        fontWeight: FONT_WEIGHTS.semiBold,
+        color: 'white'
     },
     dayContainer: {
-        padding: SIZES.xxSmall
+        flexDirection: 'row',
+        padding: SIZES.xSmall,
+        margin: SIZES.xxSmall
     },
     dayText: {
-        fontSize:SIZES.large,
-        fontWeight: FONT_WEIGHTS.semiBold
+        fontSize: SIZES.medium,
+        fontWeight: FONT_WEIGHTS.medium,
+        color: 'white'
+    },
+    dayNumberText: {
+        fontSize: SIZES.medium,
+        fontWeight: FONT_WEIGHTS.regular,
+        color: 'white'
     },
     dayHighlight: {
         fontWeight: FONT_WEIGHTS.medium

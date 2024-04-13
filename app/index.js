@@ -21,7 +21,7 @@ const App = () => {
             id: "2",
             date: "2024/04/11",
             title: "Do groceries", 
-            description: "Indeed, i do need to work on it",
+            description: "Groceriessss",
             done: false
         },
         {

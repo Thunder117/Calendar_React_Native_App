@@ -14,9 +14,8 @@ const Day = (props) => {
     return(
         <View style={styles.dayContainer}> 
 
-            <Text style={styles.dayText}>
-                {weekdays[dayOfWeek]} {dateInNumberDay}
-            </Text>
+            <Text style={styles.dayText}> {weekdays[dayOfWeek]} </Text> 
+            <Text style={styles.dayNumberText}>{dateInNumberDay}</Text>
 
         </View>
     );

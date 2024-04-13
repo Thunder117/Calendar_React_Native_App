@@ -9,14 +9,13 @@ const SIZES = {
 };
 
 const COLORS = {
-	primary: "#124c6a",
-	secondary: "#FB6D48",
+	primary: "#1b2c31",
+	secondary: "#243a41",
+	tertiary: "#2d4951",
 
+	lightGray: "#e5e6e6",
 	gray: "#83829A",
-	gray2: "#C1C0C8",
-
-	white: "#F3F4F8",
-	lightWhite: "#FAFAFC",
+	darkGray: "#C1C0C8",
 };
 
 const FONT_WEIGHTS = {
