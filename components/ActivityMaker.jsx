@@ -5,6 +5,7 @@ import { AntDesign } from '@expo/vector-icons';
 import styles from './styles';
 import Calendar from './Calendar';
 import ActivityMakerCard from './ActivityMakerCard';
+import { COLORS } from '../constants';
 
 const ActivityMaker = (props) => {
 
@@ -69,7 +70,7 @@ const ActivityMaker = (props) => {
     return (
         <View style={styles.centeredView}>
             <TouchableOpacity style={styles.calendarButton} onPress={toggleCalendar}>
-                <AntDesign name="plus" size={28} color="white" />
+                <AntDesign name="plus" size={28} color={COLORS.secondary} />
             </TouchableOpacity>
 
             <Calendar

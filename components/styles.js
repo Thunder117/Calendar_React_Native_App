@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
         height: 100,
         marginTop:1,
         marginBottom:1,
-        backgroundColor: COLORS.lightGray,
+        backgroundColor: 'white',
         flexDirection: 'row',
         justifyContent: 'space-between',
         ...SHADOWS.small
