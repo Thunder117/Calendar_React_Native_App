@@ -29,7 +29,7 @@ const ActivityCard = (props) => {
             </View>
             <View style={styles.cardSubContainer2}>
                 <TouchableOpacity style={styles.doneButton}>
-                    <AntDesign name="check" size={28} color={COLORS.lightGray} />
+                    <AntDesign name="check" size={28} color="white" />
                 </TouchableOpacity>
             </View>
 

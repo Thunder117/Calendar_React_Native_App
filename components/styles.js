@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
         elevation: 5
 	},
     confirmButton: {
-        padding:SIZES.medium,
-        borderRadius:20,
+        padding:SIZES.small,
+        borderRadius:12,
         color:'white',
         backgroundColor: COLORS.tertiary,
     },
