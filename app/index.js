@@ -11,21 +11,21 @@ const App = () => {
     let [sorted, setSorted] = useState(false);
 	let [activities, setActivities] = useState([
         {
-            id: "1",
+            id: "0",
             date: "2024/04/10",
             title: "Work in the project", 
             description: "Indeed, i do need to work on it",
-            done: false
+            done: true
         },
         {
-            id: "2",
+            id: "1",
             date: "2024/04/11",
             title: "Do groceries", 
             description: "Groceriessss",
             done: false
         },
         {
-            id: "3",
+            id: "2",
             date: "2024/04/12",
             title: "Finish reading that book", 
             description: "I'm almost done, only 48 pages left.",
@@ -94,25 +94,70 @@ const App = () => {
         sortedActivities = sortMonths(sortedActivities);
         sortedActivities = sortYears(sortedActivities);
        
-        sortedActivities.forEach(element => {
-            setActivities(a => [...a, element]);
-        });
-
-        setSorted(true);
+        return sortedActivities;
     }
     
+    // Returns the highest id number in the activities array of objects
+    const findHighestId = () => {
+        return Math.max(...activities.map(o => o.id));
+    }
+
     // Adds a new activity to activities
     const pushToActivities = (newActivity) => {
         let activitiesToSort = [...activities, newActivity];
         setActivities([]);
-        sortActivityDates(activitiesToSort);
+        let sortedActivities = sortActivityDates(activitiesToSort);
+
+        sortedActivities.forEach(element => {
+            setActivities(a => [...a, element]);
+        });
+    }
+
+    // Returns activities with an activity removed
+    const cutFromActivities = (activity) => {
+        let index = 0;
+        let counter = 0;
+        activities.forEach(currentActivity => {
+            if(currentActivity.id == activity.id) {
+                index = counter;
+                return;
+            }
+            counter++;
+        });
+
+        let newActivities = [...activities.slice(0, index), ...activities.slice(index + 1)];
+        return newActivities;
+    }
+
+    // Toggles an activity's done value
+    const toggleActivityDone = (activity) => {
+        let highestId = findHighestId();
+        let newActivities = cutFromActivities(activity);
+        newActivities = [...newActivities, {
+            id: highestId + 1,
+            date: activity.date,
+            title: activity.title,
+            description: activity.description,
+            done: !activity.done
+        }];
+        newActivities = sortActivityDates(newActivities);
+    
+        setActivities([]);
+        newActivities.forEach(element => {
+            setActivities(a => [...a, element]);
+        });
     }
 
     // Only gets called once at the beginning to sort the received activities array
     const initiate = () => {
         let activitiesToSort = activities;
         setActivities([]);
-        sortActivityDates(activitiesToSort);
+        let sortedActivities = sortActivityDates(activitiesToSort);
+        sortedActivities.forEach(element => {
+            setActivities(a => [...a, element]);
+        });
+
+        setSorted(true);
     }
 
     useEffect(() => {
@@ -142,7 +187,7 @@ const App = () => {
                         )
                     }}
                 >
-                    {() => <Home activities={activities} sorted={sorted}/>}
+                    {() => <Home activities={activities} toggleActivityDone={toggleActivityDone} sorted={sorted}/>}
                 </Stack.Screen>
 
                 <Stack.Screen 

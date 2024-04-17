@@ -30,6 +30,10 @@ const Activities = (props) => {
                             <ActivityCard
                                 title={activity.title}
                                 description={activity.description}
+                                done={activity.done}
+                                date={activity.date}
+                                toggleActivityDone={props.toggleActivityDone}
+                                id={activity.id}
                                 key={activity.id}
                             />
                         </View>
@@ -46,6 +50,10 @@ const Activities = (props) => {
                             <ActivityCard
                                 title={activity.title}
                                 description={activity.description}
+                                done={activity.done}
+                                date={activity.date}
+                                toggleActivityDone={props.toggleActivityDone}
+                                id={activity.id}
                                 key={activity.id}
                             />
                         </View>
@@ -60,6 +68,10 @@ const Activities = (props) => {
                             <ActivityCard
                                 title={activity.title}
                                 description={activity.description}
+                                done={activity.done}
+                                date={activity.date}
+                                toggleActivityDone={props.toggleActivityDone}
+                                id={activity.id}
                                 key={activity.id}
                             />
                         </View>
@@ -70,6 +82,10 @@ const Activities = (props) => {
                     <ActivityCard style={styles.activitiesContainer}
                         title={activity.title}
                         description={activity.description}
+                        done={activity.done}
+                        date={activity.date}
+                        toggleActivityDone={props.toggleActivityDone}
+                        id={activity.id}
                         key={activity.id}
                     />
                 );

@@ -28,8 +28,13 @@ const ActivityCard = (props) => {
                 </Text>
             </View>
             <View style={styles.cardSubContainer2}>
-                <TouchableOpacity style={styles.doneButton}>
-                    <AntDesign name="check" size={28} color="white" />
+                <TouchableOpacity style={styles.doneButton} onPress={() => props.toggleActivityDone({ ...props})}>
+                    {props.done 
+                    ?
+                        <AntDesign name="checkcircle" size={38} color={COLORS.green} />
+                    :
+                        <AntDesign name="checkcircleo" size={38} color={COLORS.green} />
+                    }
                 </TouchableOpacity>
             </View>
 

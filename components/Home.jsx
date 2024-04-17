@@ -11,7 +11,7 @@ const Home = (props) => {
             <ScrollView showsVerticalScrollIndicator={false}>
                 {props.sorted &&
                     <View>
-                        <Activities activities={props.activities} sorted={props.sorted}/>
+                        <Activities activities={props.activities} toggleActivityDone={props.toggleActivityDone} sorted={props.sorted}/>
                     </View>
                 }
             </ScrollView>

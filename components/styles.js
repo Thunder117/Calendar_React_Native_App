@@ -57,10 +57,10 @@ const styles = StyleSheet.create({
     },
     cardSubContainer1: {
         padding: SIZES.medium,
-        flex: 15,
+        flex: 16,
     },
     cardSubContainer2: {
-        flex: 3,
+        flex: 4,
         padding: SIZES.medium,
         alignItems: 'center',
         justifyContent: 'center'
@@ -78,7 +78,6 @@ const styles = StyleSheet.create({
         fontSize: 15
     },
     doneButton: {
-        backgroundColor: COLORS.green,
         padding: 7,
         borderRadius: 100,
     },

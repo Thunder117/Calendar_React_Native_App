@@ -50,11 +50,10 @@ const ActivityMaker = (props) => {
         highestId = findHighestId();
         props.pushToActivities({
             id: highestId + 1,
-            start: "2",
-            end: "3",
             date: date,
             title: activityTitle, 
-            description: activityDescription
+            description: activityDescription,
+            finished: false
         });
         setActivityTitle("");
         setActivityDescription("");
