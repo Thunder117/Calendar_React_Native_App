@@ -164,6 +164,10 @@ const App = () => {
         initiate();
     }, []);
 
+    const toggleDrawer = () => {
+        console.log("just did");
+    }
+
     return (
         <NavigationContainer independent={true}>
             <Stack.Navigator 

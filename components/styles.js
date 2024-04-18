@@ -28,6 +28,15 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 5
 	},
+    activityDetailsContainer: {
+        height: '100%',
+        alignItems: 'center',
+        backgroundColor: 'white'
+    },
+    activityDetailsDescription: {
+        margin: 24,
+        fontSize: 25
+    },
     confirmButton: {
         padding:SIZES.small,
         borderRadius:12,
@@ -53,7 +62,14 @@ const styles = StyleSheet.create({
     },
     cardSubContainer0: {
         flex: 1,
-        backgroundColor: COLORS.green
+    },
+    cardSubContainerGreen: {
+        height: '100%',
+        backgroundColor: COLORS.green,
+    },
+    cardSubContainerYellow: {
+        height: '100%',
+        backgroundColor: 'yellow',
     },
     cardSubContainer1: {
         padding: SIZES.medium,
