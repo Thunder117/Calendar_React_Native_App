@@ -12,14 +12,14 @@ const ActivityMakerCard = (props) => {
 							style={styles.activityMakerCardTitle}
 							onChangeText={props.setActivityTitle}
 							value={props.activityTitle}
-							placeholder='Finish that book...'
+							placeholder='A title...'
 						/>
 
 						<TextInput
 							style={styles.activityMakerCardDescription}
 							onChangeText={props.setActivityDescription}
 							value={props.activityDescription}
-							placeholder='Only 50 pages left'
+							placeholder='A description...'
 							multiline
 						/>
 					</View>
