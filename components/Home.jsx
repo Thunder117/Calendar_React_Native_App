@@ -1,7 +1,6 @@
 import Activities from './Activities';
 import { ScrollView, View } from 'react-native'
-import { StatusBar, SafeAreaView } from 'react-native';
-import { COLORS } from '../constants';
+import { SafeAreaView } from 'react-native';
 import styles from './styles';
 
 const Home = (props) => {
@@ -11,7 +10,7 @@ const Home = (props) => {
             <ScrollView showsVerticalScrollIndicator={false}>
                 {props.sorted &&
                     <View>
-                        <Activities activities={props.activities} toggleActivityDone={props.toggleActivityDone} sorted={props.sorted}/>
+                        <Activities activities={props.activities} toggleActivityDone={props.toggleActivityDone} deleteActivity={props.deleteActivity} sorted={props.sorted}/>
                     </View>
                 }
             </ScrollView>

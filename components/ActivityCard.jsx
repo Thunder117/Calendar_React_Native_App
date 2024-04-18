@@ -4,6 +4,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import styles from './styles';
 import { COLORS } from "../constants";
+import { focusProps } from 'react-native-web/dist/cjs/modules/forwardedProps';
 
 const ActivityCard = (props) => {
     const navigation = useNavigation();
@@ -43,7 +44,7 @@ const ActivityCard = (props) => {
                         <AntDesign name="checkcircleo" size={38} color={COLORS.green} />
                     }
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => props.deleteActivity({...props})}>
                     <Feather name="trash" size={24} color="black" />
                 </TouchableOpacity>
             </View>

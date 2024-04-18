@@ -65,15 +65,15 @@ const styles = StyleSheet.create({
     },
     cardSubContainerGreen: {
         height: '100%',
-        backgroundColor: COLORS.green,
+        backgroundColor: COLORS.green
     },
     cardSubContainerYellow: {
         height: '100%',
-        backgroundColor: 'yellow',
+        backgroundColor: 'yellow'
     },
     cardSubContainer1: {
         padding: SIZES.medium,
-        flex: 16,
+        flex: 16
     },
     cardSubContainer2: {
         flex: 4,

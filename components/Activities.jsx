@@ -33,6 +33,7 @@ const Activities = (props) => {
                                 done={activity.done}
                                 date={activity.date}
                                 toggleActivityDone={props.toggleActivityDone}
+                                deleteActivity={props.deleteActivity}
                                 id={activity.id}
                                 key={activity.id}
                             />
@@ -53,6 +54,7 @@ const Activities = (props) => {
                                 done={activity.done}
                                 date={activity.date}
                                 toggleActivityDone={props.toggleActivityDone}
+                                deleteActivity={props.deleteActivity}
                                 id={activity.id}
                                 key={activity.id}
                             />
@@ -71,6 +73,7 @@ const Activities = (props) => {
                                 done={activity.done}
                                 date={activity.date}
                                 toggleActivityDone={props.toggleActivityDone}
+                                deleteActivity={props.deleteActivity}
                                 id={activity.id}
                                 key={activity.id}
                             />
@@ -85,6 +88,7 @@ const Activities = (props) => {
                         done={activity.done}
                         date={activity.date}
                         toggleActivityDone={props.toggleActivityDone}
+                        deleteActivity={props.deleteActivity}
                         id={activity.id}
                         key={activity.id}
                     />

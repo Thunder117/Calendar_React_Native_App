@@ -99,7 +99,11 @@ const App = () => {
     
     // Returns the highest id number in the activities array of objects
     const findHighestId = () => {
-        return Math.max(...activities.map(o => o.id));
+        let highest = Math.max(...activities.map(o => o.id));
+        if(highest < 0) {
+            highest = 0;
+        }
+        return highest;
     }
 
     // Adds a new activity to activities
@@ -127,6 +131,15 @@ const App = () => {
 
         let newActivities = [...activities.slice(0, index), ...activities.slice(index + 1)];
         return newActivities;
+    }
+
+    // Deletes an activity from activities
+    const deleteActivity = (activity) => {
+        let newActivities = cutFromActivities(activity);
+        setActivities([]);
+        newActivities.forEach(element => {
+            setActivities(a => [...a, element]);
+        });
     }
 
     // Toggles an activity's done value
@@ -191,7 +204,7 @@ const App = () => {
                         )
                     }}
                 >
-                    {() => <Home activities={activities} toggleActivityDone={toggleActivityDone} sorted={sorted}/>}
+                    {() => <Home activities={activities} toggleActivityDone={toggleActivityDone} deleteActivity={deleteActivity} sorted={sorted}/>}
                 </Stack.Screen>
 
                 <Stack.Screen 
