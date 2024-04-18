@@ -32,7 +32,16 @@ const ActivityCard = (props) => {
                     {props.title}
                 </Text>
                 <Text style={styles.cardDescription}>
-                    {props.description}
+                    { props.description.length < 55
+                    ?
+                        <Text>
+                            {props.description}
+                        </Text>
+                    :
+                        <Text>
+                            {props.description.slice(0,55)}...
+                        </Text>
+                    }
                 </Text>
             </View>
             <View style={styles.cardSubContainer2}>
