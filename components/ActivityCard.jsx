@@ -4,7 +4,6 @@ import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import styles from './styles';
 import { COLORS } from "../constants";
-import { focusProps } from 'react-native-web/dist/cjs/modules/forwardedProps';
 
 const ActivityCard = (props) => {
     const navigation = useNavigation();
@@ -29,7 +28,16 @@ const ActivityCard = (props) => {
             </View>
             <View style={styles.cardSubContainer1}>
                 <Text style={styles.cardTitle}>
-                    {props.title}
+                    { props.title.length < 25
+                    ?
+                        <Text>
+                            {props.title}
+                        </Text>
+                    :
+                        <Text>
+                            {props.title.slice(0,25)}...
+                        </Text>
+                    }
                 </Text>
                 <Text style={styles.cardDescription}>
                     { props.description.length < 55
